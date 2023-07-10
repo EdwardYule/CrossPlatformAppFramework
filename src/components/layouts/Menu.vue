@@ -28,7 +28,7 @@ watch(
   () => deviceType.value,
   (newVal) => {
     if (newVal === "phone") {
-      width.value = "80px";
+      width.value = "40px";
     } else if (newVal === "pad") {
       width.value = "180px";
     } else {
@@ -42,13 +42,13 @@ watch(
   <div
     class="menu"
     :style="{
-      width,
+      minWidth: width,
     }"
   >
     <div v-for="route in routes" :key="route.path">
       <div @click="to(route)" class="item">
         <MenuIcon />
-        <span>{{ route.name }}</span>
+        <span v-if="deviceType != 'phone'">{{ route.name }}</span>
       </div>
     </div>
   </div>

@@ -7,9 +7,10 @@ import Header from '@/components/layouts/Header.vue'
 <template>
   <div class="main">
     <Menu></Menu>
-    <main>
+
+    <main class="content">
       <Header></Header>
-      <div class="content">
+      <div>
         <RouterView />
       </div>
     </main>
@@ -19,9 +20,11 @@ import Header from '@/components/layouts/Header.vue'
 <style scoped lang="stylus">
 .main {
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
+  height: 100vh;
   .content {
-    padding: 20px;
+    width: 100%;
+    flex: 1;
   }
 }
 </style>
